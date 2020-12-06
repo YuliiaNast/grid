@@ -1,0 +1,138 @@
+.posts {
+    @include lg-min {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    @include lg-md {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    @include md {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  
+    &__container {
+      @extend %container;
+      h2 {
+        color: $color-primary;
+        margin-top: 0;
+        letter-spacing: 0.1em;
+  
+        @include lg-min {
+          font-size: 2.5rem;
+          margin-bottom: 56px;
+        }
+        @include lg-md {
+          font-size: 2rem;
+          margin-bottom: 42px;
+        }
+        @include md-sm {
+          font-size: 1.5rem;
+          margin-bottom: 36px;
+        }
+        @include sm {
+          font-size: 1.5rem;
+          margin-bottom: 36px;
+          text-align: center;
+        }
+      }
+    }
+    &__grid {
+      display: grid;
+      padding-bottom: $gap;
+      grid-gap: $gap;
+  
+      @include lg-min {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+          "p1 p1 p2 p3"
+          "p4 p5 p6 p6";
+      }
+      @include lg-md {
+        grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include md-sm {
+        grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include sm {
+        grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    &__button {
+      display: flex;
+      justify-content: center;
+      .btn-accent {
+        min-width: 350px;
+      }
+    }
+  }
+  
+  .post-item {
+    &__link {
+      display: grid;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      grid-template-rows: 300px 1fr;
+  
+      width: 100%;
+      &:hover .post-item {
+        &__image {
+          img {
+            transform: scale(1.1);
+          }
+        }
+        &__content {
+          h3,
+          p {
+            color: $color-gray;
+          }
+          background-color: $color-gray-light;
+        }
+      }
+    }
+  
+    &__image {
+      background-color: $color-primary;
+      overflow: hidden;
+      display: flex;
+      align-content: center;
+  
+      img {
+        overflow: hidden;
+        width: 100%;
+        transition: transform 0.5s;
+        object-fit: cover;
+      }
+    }
+    &__content {
+      display: grid;
+      padding: $gap;
+      align-content: center;
+      background-color: rgba($color-gray-light, 0.3);
+      transition: background-color 0.5s;
+  
+      h3 {
+        color: $color-gray;
+        font-size: 1.125em;
+        letter-spacing: 0.05em;
+        text-align: center;
+      }
+      p {
+        color: $color-gray;
+        text-align: center;
+        transition: color 0.5s;
+      }
+    }
+  }
+  
+  @for $i from 1 through 6 {
+    .post-item:nth-of-type(#{$i}) {
+      grid-area: p#{$i};
+    }
+  }
+  

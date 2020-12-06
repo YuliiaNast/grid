@@ -1,0 +1,54 @@
+.footer {
+    padding: 50px $gap 70px;
+    text-align: center;
+    background-color: $color-primary;
+    &__container {
+      @extend %container;
+    }
+    &__social {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      margin-bottom: 40px;
+      position: relative;
+  
+      &::after {
+        position: absolute;
+        bottom: (-$gap);
+        left: calc(50% - 75px / 2);
+        width: 75px;
+        height: 2px;
+        content: "";
+        background-color: rgba($color-gray, 0.4);
+      }
+      .fab {
+        font-family: "Font Awesome 5 Brands";
+        font-size: 36px;
+        font-weight: 400;
+      }
+      a {
+        display: block;
+        padding: 10px;
+        transition: color 0.5s;
+        color: $color-light;
+        &:hover {
+          color: $color-accent;
+        }
+      }
+    }
+    &__copy {
+      span {
+        &:nth-of-type(1) {
+          font-weight: 100;
+          letter-spacing: 0.33em;
+          margin-right: -0.5em;
+        }
+        &:nth-of-type(2) {
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          color: $color-gray-light;
+        }
+      }
+    }
+  }
+  

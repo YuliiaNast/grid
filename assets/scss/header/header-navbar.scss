@@ -1,0 +1,108 @@
+.header-navbar {
+    display: grid;
+    justify-items: end;
+    position: relative;
+    letter-spacing: 0.1rem;
+    align-items: center;
+  
+    &__btn {
+      position: relative;
+      width: 30px;
+      height: 23px;
+      margin: $gap 0;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+  
+      @include md-min {
+        display: none;
+      }
+      @include md {
+        display: block;
+      }
+  
+      &-row {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: $color-light;
+        border-radius: 3px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+  
+        &:nth-child(1) {
+          top: 0px;
+        }
+  
+        &:nth-child(2) {
+          top: 9px;
+        }
+  
+        &:nth-child(3) {
+          top: 18px;
+        }
+  
+        &:nth-child(4) {
+          top: 18px;
+        }
+      }
+  
+      &--active span {
+        &:nth-child(1) {
+          top: 9px;
+          width: 0%;
+          left: 50%;
+        }
+  
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+  
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+          top: 9px;
+          
+        }
+  
+        &:nth-child(4) {
+          top: 9px;
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+  
+    &__list {
+      @include unlist(0 (-$gap * 2) 0 0);
+  
+      @include md-min {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+        justify-content: flex-end;
+        width: 100%;
+      }
+  
+      @include md {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: $gap * 2;
+        text-align: right;
+        background-color: rgba($color-gray-dark, 0.9);
+      }
+    }
+  
+    &__link {
+      display: block;
+  
+      padding: $gap;
+  
+      letter-spacing: 0.088em;
+  
+      font-size: 1.125rem;
+    }
+  }
+  

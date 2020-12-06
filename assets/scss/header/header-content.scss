@@ -1,0 +1,47 @@
+.header {
+  position: relative;
+}
+.header-content {
+    position: relative;
+  
+    &__title {
+      text-align: center;
+  
+      @include lg-min {
+        margin: 0 0 53px 0;
+      }
+      @include lg-md {
+        margin: 0 0 43px 0;
+      }
+      @include md {
+        margin: 0 0 33px 0;
+      }
+    }
+  
+    &__buttons {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .btn:first-of-type {
+      margin-right: $gap;
+  
+      @include sm-min {
+        margin-right: $gap;
+      }
+  
+      @include sm {
+        margin-right: $gap;
+      }
+  
+      @include sm {
+        align-items: center;
+        flex-direction: column;
+      }
+  
+      &__container {
+        @extend %container;
+      }
+    }
+  }
+  
