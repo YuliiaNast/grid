@@ -662,7 +662,7 @@ a {
 }
 
 .header-navbar__list {
-  margin: 0 -40px 0 0;
+  margin: 0 -20px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -697,6 +697,11 @@ a {
 
 .header-content .btn:first-of-type {
   margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.header-content .btn:last-of-type {
+  margin-right: 15px;
 }
 
 .skills__container {
@@ -1147,9 +1152,6 @@ a {
   .btn-accent {
     min-width: 350px;
   }
-  .header-content .btn:first-of-type {
-    margin-right: 20px;
-  }
   .skills {
     padding: 10px;
     margin-bottom: 30px;
@@ -1245,6 +1247,7 @@ a {
   .header-content__title {
     margin: 0 0 43px 0;
   }
+
   .skills__container {
     grid-gap: 10px;
     grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
@@ -1296,7 +1299,9 @@ a {
   }
   .header-menu {
     background-color: rgba(68, 89, 110, 0.25);
+
   }
+
   .header-navbar__btn {
     display: block;
   }
@@ -1365,43 +1370,54 @@ a {
 }
 
 @media (max-width: 575.8px) {
+  body {
+    overflow-x: hidden;
+  }
   .btn-accent {
     width: 100%;
   }
-  .header-content .btn:first-of-type {
-    margin-right: 20px;
+  .header-content__buttons.btn:first-of-type {
+    margin-bottom: 20px;
+    
   }
-  .header-content .btn:first-of-type {
+
+  .header-content__buttons:first-of-type {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
+    -ms-flex-direction: column;
             flex-direction: column;
   }
+
   .skills {
     padding: 20px;
   }
+
   .skills__container {
     grid-gap: 20px;
     grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
     grid-template-columns: 1fr;
   }
+
   .about__container {
     grid-template-columns: 1fr;
     grid-gap: 20px;
   }
+
   .about__content h2 {
     margin-bottom: 36px;
     text-align: center;
     font-size: 1.5rem;
   }
+
   .posts__container h2 {
     font-size: 1.5rem;
     margin-bottom: 36px;
     text-align: center;
   }
+
   .posts__grid {
     grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
     grid-template-columns: repeat(1, 1fr);

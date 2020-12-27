@@ -16,6 +16,8 @@
   
       @include md-min {
         display: none;
+        align-items: center;
+        flex-direction: column;
       }
       @include md {
         display: block;
@@ -34,7 +36,7 @@
         transition: 0.25s ease-in-out;
   
         &:nth-child(1) {
-          top: 0px;
+          top: 0;
         }
   
         &:nth-child(2) {
@@ -53,7 +55,7 @@
       &--active span {
         &:nth-child(1) {
           top: 9px;
-          width: 0%;
+          width: 0;
           left: 50%;
         }
   
